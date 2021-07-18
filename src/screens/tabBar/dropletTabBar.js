@@ -18,7 +18,7 @@ import Animated, {
 import {heightRef, widthRef} from '../../constants/screenSize';
 
 import MaskedView from '@react-native-community/masked-view';
-function StickyTabBar({state, descriptors, navigation, position, tabs}) {
+function DropletTabBar({state, descriptors, navigation, position, tabs}) {
   const cartRef = React.useRef(null);
   const scrollListReftop = useAnimatedRef(null);
   const secondary = '#A4FFEB';
@@ -138,8 +138,8 @@ function StickyTabBar({state, descriptors, navigation, position, tabs}) {
         backgroundColor: primary,
         paddingBottom: 5 * heightRef,
         overflow: 'hidden',
-        paddingTop: 20 * heightRef,
         paddingHorizontal: 10 * widthRef,
+        paddingTop: 20 * heightRef,
       }}>
       <ScrollView
         horizontal
@@ -232,4 +232,4 @@ function StickyTabBar({state, descriptors, navigation, position, tabs}) {
   );
 }
 
-export default StickyTabBar;
+export default DropletTabBar;

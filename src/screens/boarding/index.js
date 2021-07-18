@@ -10,34 +10,19 @@ import {
   TouchableNativeFeedback,
 } from 'react-native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import {heightRef} from '../constants/screenSize';
+import {heightRef} from '../../constants/screenSize';
 const Tab = createMaterialTopTabNavigator();
 
-const Initial = props => {
-  const tabTypes = [
+const Boarding = props => {
+  const boardingTypes = [
     {
       id: 0,
-      name: 'Tab Bar Animation',
-      screen: 'TabBar',
-    },
-    {
-      id: 1,
-      name: 'Scroll/FlatList Animation',
-      screen: 'Scroll',
-    },
-    {
-      id: 2,
-      name: 'Boarding Screen Animation',
-      screen: 'Boarding',
+      name: 'OnBoarding Flow Animation',
+      screen: 'FlowAnimation',
     },
   ];
   return (
     <View style={{height: '100%'}}>
-      <StatusBar
-        barStyle="light-content"
-        translucent
-        backgroundColor="rgba(255,255,255,0.2)"
-      />
       <ScrollView
         style={{flex: 1}}
         contentContainerStyle={{
@@ -45,7 +30,7 @@ const Initial = props => {
           flexGrow: 1,
           paddingVertical: 10,
         }}>
-        {tabTypes.map(item => (
+        {boardingTypes.map(item => (
           <TouchableNativeFeedback
             key={item.name}
             useForeground
@@ -55,7 +40,6 @@ const Initial = props => {
             <View
               style={{
                 height: 50 * heightRef,
-
                 width: '90%',
                 backgroundColor: 'white',
                 elevation: 5,
@@ -63,7 +47,6 @@ const Initial = props => {
                 justifyContent: 'center',
                 borderRadius: 10,
                 overflow: 'hidden',
-                marginVertical: 5 * heightRef,
               }}>
               <Text>{item.name}</Text>
             </View>
@@ -100,4 +83,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Initial;
+export default Boarding;

@@ -20,6 +20,12 @@ const TabBar = props => {
     {
       id: 0,
       name: 'Sticky Tab Bar',
+      position: 'top',
+    },
+    {
+      id: 1,
+      name: 'Droplet Tab Bar ',
+      position: 'bottom',
     },
   ];
   return (
@@ -38,11 +44,13 @@ const TabBar = props => {
             onPress={() => {
               props.navigation.navigate('TabBarAnimation', {
                 type: item.id,
+                position: item.position,
               });
             }}>
             <View
               style={{
                 height: 50 * heightRef,
+                marginTop: 5 * heightRef,
                 width: '90%',
                 backgroundColor: 'white',
                 elevation: 5,

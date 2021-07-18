@@ -38,6 +38,13 @@ const App = () => {
   return (
     <>
       <StatusBar barStyle={'dark-content'} />
+      {/* <View
+        style={{
+          height: StatusBar.currentHeight,
+          width: '100%',
+          backgroundColor: 'transparent',
+        }}
+      /> */}
       <NavigationContainer>
         <RootStack />
       </NavigationContainer>

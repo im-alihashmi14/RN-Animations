@@ -11,13 +11,15 @@ import {
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import SCreen from './screen';
 import StickyTabBar from './stickyTab';
+import DropletTabBar from './dropletTabBar';
 const Tab = createMaterialTopTabNavigator();
 
 const TabBarScreen = props => {
   const isDarkMode = useColorScheme() === 'dark';
   const scrollListReftop = React.useRef();
-  console.log('rendered TABBAR');
   const type = props.route.params.type;
+  const position = props.route.params.position;
+  console.log('rendered TABBAR', position);
   const tabs = [
     {
       name: 'Tab1',
@@ -50,17 +52,18 @@ const TabBarScreen = props => {
       case 0:
         return StickyTabBar;
         break;
-
+      case 1:
+        return DropletTabBar;
+        break;
       default:
         break;
     }
   }, []);
   return (
     <View style={{height: '100%'}}>
-      <View
-        style={{height: 29, width: '100%', backgroundColor: '#39444F'}}></View>
       <Tab.Navigator
         initialRouteName="All"
+        tabBarPosition={position}
         tabBar={props => <RenderTabBar tabs={tabs} {...props} />}>
         {tabs.map(tab => {
           return (

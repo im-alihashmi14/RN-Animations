@@ -5,33 +5,22 @@ import {View, Text, StyleSheet} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Initial from '../screens';
 import {navOptionHandler} from '../utils/functions';
-import TabStack from './tabBar';
-import ScrollStack from './scroll';
-import BoardingStack from './boarding';
+import Boarding from '../screens/boarding';
+import FlowAnimation from '../screens/boarding/flowAnimation';
 
 const StackApp = createStackNavigator();
 // create a component
-const RootStack = () => {
+const BoardingStack = () => {
   return (
     <StackApp.Navigator initialRouteName="Home">
       <StackApp.Screen
         name="Home"
-        component={Initial}
+        component={Boarding}
         options={navOptionHandler}
       />
       <StackApp.Screen
-        name="TabBar"
-        component={TabStack}
-        options={navOptionHandler}
-      />
-      <StackApp.Screen
-        name="Scroll"
-        component={ScrollStack}
-        options={navOptionHandler}
-      />
-      <StackApp.Screen
-        name="Boarding"
-        component={BoardingStack}
+        name="FlowAnimation"
+        component={FlowAnimation}
         options={navOptionHandler}
       />
     </StackApp.Navigator>
@@ -49,4 +38,4 @@ const styles = StyleSheet.create({
 });
 
 //make this component available to the app
-export default RootStack;
+export default BoardingStack;

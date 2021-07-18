@@ -7,7 +7,11 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+     "generate-apk": "cd android && ./gradlew app:assembleRelease",
+    "debug-apk": "cd android && ./gradlew app:assembleDebug && nautilus android/app/build/outputs/apk/debug",
+    "temp-release": "yarn generate-apk && yarn open-explorer",
+    "open-explorer": "nautilus android/app/build/outputs/apk/release"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.11",
@@ -23,6 +27,7 @@
     "react-native-reanimated": "^2.0.0",
     "react-native-safe-area-context": "^3.2.0",
     "react-native-screens": "^3.3.0",
+    "react-native-svg": "^12.1.1",
     "react-native-tab-view": "^2.16.0"
   },
   "devDependencies": {
