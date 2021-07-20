@@ -12,6 +12,7 @@ import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs
 import SCreen from './screen';
 import StickyTabBar from './stickyTab';
 import DropletTabBar from './dropletTabBar';
+import LiquidTabBar from './liquidTabBar';
 const Tab = createMaterialTopTabNavigator();
 
 const TabBarScreen = props => {
@@ -51,10 +52,10 @@ const TabBarScreen = props => {
     switch (type) {
       case 0:
         return StickyTabBar;
-        break;
       case 1:
         return DropletTabBar;
-        break;
+      case 2:
+        return LiquidTabBar;
       default:
         break;
     }

@@ -27,6 +27,11 @@ const TabBar = props => {
       name: 'Droplet Tab Bar ',
       position: 'bottom',
     },
+    {
+      id: 2,
+      name: 'Liquid Tab Bar',
+      position: 'bottom',
+    },
   ];
   return (
     <View style={{height: '100%'}}>

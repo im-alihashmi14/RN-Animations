@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 //import liraries
 import React from 'react';
 import {

@@ -32,13 +32,13 @@ const SCreen = props => {
     <>
       <View style={{...styles.container, backgroundColor: color}}>
         <Text style={{fontSize: 49}}>{heading}</Text>
-        <Svg height={300} width={400}>
+        {/* <Svg height={300} width={400}>
           <Path
             d="M 25,75 q 10,-25 10,-25 q 10,-75 10,25 q 10,-25 10,0 Z" // put your path here
             fill="blue"
             stroke="blue"
           />
-        </Svg>
+        </Svg> */}
       </View>
     </>
   );

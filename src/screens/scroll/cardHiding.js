@@ -96,6 +96,7 @@ const CardHiding = () => {
       <Animated.ScrollView
         onScroll={scrollHandler}
         showsVerticalScrollIndicator={false}
+        scrollEventThrottle={16}
         style={{flex: 1, width: '100%'}}
         contentContainerStyle={{
           flexGrow: 1,
