@@ -170,3 +170,9 @@ export const LayoutAnimationConfigure = () => {
     update: {type: LayoutAnimation.Types.easeInEaseOut},
   });
 };
+
+export const compareObject = (objA, objB) => {
+  return JSON.stringify(objA) === JSON.stringify(objB);
+};
+
+export const cloneObject = obj => JSON.parse(JSON.stringify(obj));

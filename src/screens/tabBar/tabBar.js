@@ -13,6 +13,7 @@ import SCreen from './screen';
 import StickyTabBar from './stickyTab';
 import DropletTabBar from './dropletTabBar';
 import LiquidTabBar from './liquidTabBar';
+import TransparentBorder from './transparentBorder';
 const Tab = createMaterialTopTabNavigator();
 
 const TabBarScreen = props => {
@@ -56,6 +57,8 @@ const TabBarScreen = props => {
         return DropletTabBar;
       case 2:
         return LiquidTabBar;
+      case 3:
+        return TransparentBorder;
       default:
         break;
     }

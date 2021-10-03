@@ -13,6 +13,7 @@ import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs
 import SCreen from './screen';
 import StickyTabBar from './stickyTab';
 import {heightRef} from '../../constants/screenSize';
+import Header from '../../components/Header';
 const Tab = createMaterialTopTabNavigator();
 
 const TabBar = props => {
@@ -32,9 +33,16 @@ const TabBar = props => {
       name: 'Liquid Tab Bar',
       position: 'bottom',
     },
+    {
+      id: 3,
+      name: 'Transparent Border Tab-Bar',
+      position: 'bottom',
+    },
   ];
   return (
     <View style={{height: '100%'}}>
+      <Header />
+
       <ScrollView
         style={{flex: 1}}
         contentContainerStyle={{

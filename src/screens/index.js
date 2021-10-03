@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {
   SafeAreaView,
@@ -11,9 +12,13 @@ import {
 } from 'react-native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import {heightRef} from '../constants/screenSize';
-const Tab = createMaterialTopTabNavigator();
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import Header from '../components/Header';
+import {Shadow} from 'react-native-neomorph-shadows-fixes';
 
+const Tab = createMaterialTopTabNavigator();
 const Initial = props => {
+  const inset = useSafeAreaInsets();
   const tabTypes = [
     {
       id: 0,
@@ -30,14 +35,20 @@ const Initial = props => {
       name: 'Boarding Screen Animation',
       screen: 'Boarding',
     },
+    {
+      id: 3,
+      name: 'Geometry Screen Animation',
+      screen: 'Geometry',
+    },
+    {
+      id: 4,
+      name: 'PanGesture Animation',
+      screen: 'PanGesture',
+    },
   ];
   return (
     <View style={{height: '100%'}}>
-      <StatusBar
-        barStyle="light-content"
-        translucent
-        backgroundColor="rgba(255,255,255,0.2)"
-      />
+      <Header />
       <ScrollView
         style={{flex: 1}}
         contentContainerStyle={{
@@ -69,6 +80,21 @@ const Initial = props => {
             </View>
           </TouchableNativeFeedback>
         ))}
+        {/* <Shadow
+          inner // <- enable inner shadow
+
+          useArt // <- set this prop to use non-native shadow on ios
+          style={{
+            shadowOffset: {width: -5, height: 5},
+            shadowOpacity: 1,
+            shadowColor: 'grey',
+            shadowRadius: 10,
+            borderRadius: 20,
+            backgroundColor: 'white',
+            width: 100,
+            height: 100,
+            // ...include most of View/Layout styles
+          }}></Shadow> */}
       </ScrollView>
     </View>
   );

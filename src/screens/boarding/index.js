@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import {heightRef} from '../../constants/screenSize';
+import Header from '../../components/Header';
 const Tab = createMaterialTopTabNavigator();
 
 const Boarding = props => {
@@ -23,6 +24,8 @@ const Boarding = props => {
   ];
   return (
     <View style={{height: '100%'}}>
+      <Header />
+
       <ScrollView
         style={{flex: 1}}
         contentContainerStyle={{

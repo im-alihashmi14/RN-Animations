@@ -14,12 +14,12 @@ import {heightRef} from '../../constants/screenSize';
 import Header from '../../components/Header';
 const Tab = createMaterialTopTabNavigator();
 
-const Scroll = props => {
-  const scrollTypes = [
+const PanGesture = props => {
+  const types = [
     {
       id: 0,
-      name: 'Card Hiding Header',
-      screen: 'CardHiding',
+      name: 'Light Bulb',
+      screen: 'LightBulb',
     },
   ];
   return (
@@ -33,24 +33,14 @@ const Scroll = props => {
           flexGrow: 1,
           paddingVertical: 10,
         }}>
-        {scrollTypes.map(item => (
+        {types.map(item => (
           <TouchableNativeFeedback
             key={item.name}
             useForeground
             onPress={() => {
               props.navigation.navigate(item.screen);
             }}>
-            <View
-              style={{
-                height: 50 * heightRef,
-                width: '90%',
-                backgroundColor: 'white',
-                elevation: 5,
-                alignItems: 'center',
-                justifyContent: 'center',
-                borderRadius: 10,
-                overflow: 'hidden',
-              }}>
+            <View style={styles.button}>
               <Text>{item.name}</Text>
             </View>
           </TouchableNativeFeedback>
@@ -84,6 +74,16 @@ const styles = StyleSheet.create({
   highlight: {
     fontWeight: '700',
   },
+  button: {
+    height: 50 * heightRef,
+    width: '90%',
+    backgroundColor: 'white',
+    elevation: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
+    overflow: 'hidden',
+  },
 });
 
-export default Scroll;
+export default PanGesture;

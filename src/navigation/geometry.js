@@ -5,45 +5,30 @@ import {View, Text, StyleSheet} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Initial from '../screens';
 import {navOptionHandler} from '../utils/functions';
-import TabStack from './tabBar';
-import ScrollStack from './scroll';
-import BoardingStack from './boarding';
-import GeometryStack from './geometry';
-import PanGestureStack from './pangesture';
+import Boarding from '../screens/boarding';
+import FlowAnimation from '../screens/boarding/flowAnimation';
+import Geometry from '../screens/geometry';
+import RotatingBeads from '../screens/geometry/RotatingBeads';
+import LayoutBuilder from '../screens/geometry/LayoutBuilder';
 
 const StackApp = createStackNavigator();
 // create a component
-const RootStack = () => {
+const GeometryStack = () => {
   return (
     <StackApp.Navigator initialRouteName="Home">
       <StackApp.Screen
         name="Home"
-        component={Initial}
+        component={Geometry}
         options={navOptionHandler}
       />
       <StackApp.Screen
-        name="TabBar"
-        component={TabStack}
+        name="Rotating Beads"
+        component={RotatingBeads}
         options={navOptionHandler}
       />
       <StackApp.Screen
-        name="Scroll"
-        component={ScrollStack}
-        options={navOptionHandler}
-      />
-      <StackApp.Screen
-        name="Boarding"
-        component={BoardingStack}
-        options={navOptionHandler}
-      />
-      <StackApp.Screen
-        name="Geometry"
-        component={GeometryStack}
-        options={navOptionHandler}
-      />
-      <StackApp.Screen
-        name="PanGesture"
-        component={PanGestureStack}
+        name="Layout Builder"
+        component={LayoutBuilder}
         options={navOptionHandler}
       />
     </StackApp.Navigator>
@@ -61,4 +46,4 @@ const styles = StyleSheet.create({
 });
 
 //make this component available to the app
-export default RootStack;
+export default GeometryStack;

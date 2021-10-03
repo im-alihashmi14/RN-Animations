@@ -10,7 +10,7 @@ import Animated, {
   withSpring,
   withSequence,
 } from 'react-native-reanimated';
-const LiquidTab = ({
+const TransBorder = ({
   iconWidth,
   item,
   index,
@@ -22,22 +22,7 @@ const LiquidTab = ({
   const width = useSharedValue(iconWidth);
   const translateY = useSharedValue(0);
   const translateX = useSharedValue(0);
-  // React.useEffect(() => {
-  //   if (state.index === index) {
-  //     width.value = withSequence(
-  //       withTiming(0, {duration: 1000}, () => {
-  //         translateY.value = withSpring(0);
 
-  //         translateX.value = withSpring(0);
-  //       }),
-  //       withSpring(iconWidth),
-  //     );
-
-  //     translateY.value = withTiming(-80, {duration: 1000});
-
-  //     translateX.value = withTiming(iconWidth / 2 - 5, {duration: 1000});
-  //   }
-  // }, [state.index]);
   return (
     <Animated.View
       style={useAnimatedStyle(() => {
@@ -101,6 +86,6 @@ const LiquidTab = ({
   );
 };
 
-export default LiquidTab;
+export default TransBorder;
 
 const styles = StyleSheet.create({});

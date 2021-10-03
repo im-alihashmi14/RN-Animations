@@ -14,12 +14,17 @@ import {heightRef} from '../../constants/screenSize';
 import Header from '../../components/Header';
 const Tab = createMaterialTopTabNavigator();
 
-const Scroll = props => {
-  const scrollTypes = [
+const Geometry = props => {
+  const types = [
     {
       id: 0,
-      name: 'Card Hiding Header',
-      screen: 'CardHiding',
+      name: 'Rotating Beads Animation',
+      screen: 'Rotating Beads',
+    },
+    {
+      id: 1,
+      name: 'Layout Builder Animation',
+      screen: 'Layout Builder',
     },
   ];
   return (
@@ -33,24 +38,14 @@ const Scroll = props => {
           flexGrow: 1,
           paddingVertical: 10,
         }}>
-        {scrollTypes.map(item => (
+        {types.map(item => (
           <TouchableNativeFeedback
             key={item.name}
             useForeground
             onPress={() => {
               props.navigation.navigate(item.screen);
             }}>
-            <View
-              style={{
-                height: 50 * heightRef,
-                width: '90%',
-                backgroundColor: 'white',
-                elevation: 5,
-                alignItems: 'center',
-                justifyContent: 'center',
-                borderRadius: 10,
-                overflow: 'hidden',
-              }}>
+            <View style={styles.btnStyle}>
               <Text>{item.name}</Text>
             </View>
           </TouchableNativeFeedback>
@@ -67,6 +62,17 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
     alignItems: 'center',
+  },
+  btnStyle: {
+    height: 50 * heightRef,
+    width: '90%',
+    backgroundColor: 'white',
+    elevation: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
+    overflow: 'hidden',
+    marginTop: 10,
   },
   sectionContainer: {
     marginTop: 32,
@@ -86,4 +92,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Scroll;
+export default Geometry;
